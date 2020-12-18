@@ -148,7 +148,7 @@ for server in servers:
             if line.lstrip()[0] == '<':
                 # seems to be html output. Skip this server.
                 break
-            sys.stdout.write("%s %s %s\n" % (address, port, line))
+            sys.stdout.write("%s %s %s\n" % (address, port, line.decode()))
     except urllib.error.HTTPError as e:
         sys.stderr.write('HTTP-Error (%s:%d): %s %s\n' % (address, port, e.code, e))
 
